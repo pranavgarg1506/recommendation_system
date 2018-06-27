@@ -1,0 +1,21 @@
+#books entry in table books_details;  #harry potter
+
+1.    INSERT INTO books_details VALUES(1, 'Harry Potter and the Sorcerers Stone', 'J.K.Rowling', 'fiction' ,2.7, '');
+
+
+2.    INSERT INTO books_details VALUES(2, 'Harry Potter and the Chamber of Secrets.', 'J.K.Rowling', 'fiction' ,3.7, '');
+
+
+3.    INSERT INTO books_details VALUES(3, 'Harry Potter and the Prisoner of Azkaban', 'J.K.Rowling', 'fiction' ,3.5, '');
+
+
+4.    INSERT INTO books_details VALUES(4, 'Harry Potter and the Goblet of Fire', 'J.K.Rowling', 'fiction' ,2.8, '');
+
+
+5.	  INSERT INTO books_details VALUES(5 , 'marry Potter and the Order of the Phoenix', 'J.K.Rowling' ,'fiction',4.0,'');
+
+
+6.    INSERT INTO books_details VALUES(6 , 'Harry Potter and the Half-Blood Prince', 'J.K.Rowling' ,'fiction', 3.6,'');
+
+
+7.    INSERT INTO books_details VALUES(7 , 'Harry Potter and the Deathly Hallows', 'J.K.Rowling' ,'fiction', 4.6 ,'');
