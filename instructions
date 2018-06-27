@@ -1,0 +1,16 @@
+STEPS FOR DATABASE
+
+
+1	create database major;
+	
+2	use major;
+	
+
+3	create table user_details( p_id INT(11) AUTO_INCREMENT PRIMARY KEY, p_name VARCHAR(100), p_email VARCHAR(100), p_uname VARCHAR(100), p_pass VARCHAR(100));
+
+
+
+4	create table books_details( b_id INT(11) AUTO_INCREMENT PRIMARY KEY, b_name VARCHAR(100), b_author VARCHAR(100), b_type VARCHAR(100), b_avg_rating decimal(2,1), b_desc VARCHAR(1000));
+
+5	create table user_rating( p_id INT(11) , b_id INT(11), u_rating decimal(2,1));
+
