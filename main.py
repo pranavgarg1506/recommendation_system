@@ -6,7 +6,7 @@ import mysql.connector as mariadb
 from register import register_page
 from login import login_page
 
-mariadb_connection = mariadb.connect(user='pranav', password='funny', database='project3', host='localhost')
+mariadb_connection = mariadb.connect(user='pranav', password='funny', database='major', host='localhost')
 cursor = mariadb_connection.cursor()
 
 #______________________________________________________________________________________________________________________________
