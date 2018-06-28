@@ -8,6 +8,7 @@ from login import login_page
 from user import user_page
 from admin_login import admin_login_page
 from view_users import view_users_page
+from view_books import view_books_page
 
 mariadb_connection = mariadb.connect(user='pranav', password='funny', database='major', host='localhost')
 cursor = mariadb_connection.cursor()
@@ -72,6 +73,11 @@ def check_admin():
 def show_view_users():
 	users_info = view_users_page()
 	return render_template('admin/view_users.html',results=users_info)
+
+@app.route('/view_books', methods=['GET','POST'])
+def show_view_books():
+	books_info = view_books_page()
+	return render_template('admin/view_books.html',results1=books_info)
 
 
 
