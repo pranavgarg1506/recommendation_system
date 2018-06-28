@@ -16,6 +16,8 @@ STEPS FOR DATABASE
 
 6     create table admin_details(a_id INT(11) AUTO_INCREMENT PRIMARY KEY,a_uname VARCHAR(100), a_pass VARCHAR(100));
 
+7     INSERT INTO admin_details VALUES(1, 'pranavkriya', 'lol');
+
 
 
 

@@ -9,6 +9,7 @@ from user import user_page
 from admin_login import admin_login_page
 from view_users import view_users_page
 from view_books import view_books_page
+from add_books import add_books_page
 
 mariadb_connection = mariadb.connect(user='pranav', password='funny', database='major', host='localhost')
 cursor = mariadb_connection.cursor()
@@ -27,10 +28,10 @@ def home():
 
 
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def reg():
 	return render_template('register.html')
-
 
 @app.route('/add_data', methods=['GET', 'POST'])
 def add():
@@ -41,10 +42,10 @@ def add():
 
 
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def log():
 	return render_template('login.html')
-
 
 @app.route('/check_data', methods=['GET', 'POST'])
 def check():
@@ -54,6 +55,7 @@ def check():
 		return render_template('user.html',uname=name)
 	else:
 		return render_template('login.html')
+
 
 
 
@@ -78,6 +80,15 @@ def show_view_users():
 def show_view_books():
 	books_info = view_books_page()
 	return render_template('admin/view_books.html',results1=books_info)
+
+@app.route('/add_books')
+def addb():
+	return render_template('admin/add_books.html')
+
+@app.route('/add_books_data', methods=['GET', 'POST'])
+def addbd():
+	add_books_page()
+	return render_template('admin/add_books.html')
 
 
 
