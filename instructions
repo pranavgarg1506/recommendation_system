@@ -14,3 +14,8 @@ STEPS FOR DATABASE
 
 5	create table user_rating( p_id INT(11) , b_id INT(11), u_rating decimal(2,1));
 
+6     create table admin_details(a_id INT(11) AUTO_INCREMENT PRIMARY KEY,a_uname VARCHAR(100), a_pass VARCHAR(100));
+
+
+
+
