@@ -5,6 +5,8 @@ from flask import Flask,render_template,request,session
 import mysql.connector as mariadb
 from register import register_page
 from login import login_page
+from user import user_page
+from admin_login import admin_login_page
 
 mariadb_connection = mariadb.connect(user='pranav', password='funny', database='major', host='localhost')
 cursor = mariadb_connection.cursor()
@@ -45,10 +47,26 @@ def log():
 @app.route('/check_data', methods=['GET', 'POST'])
 def check():
 	answer = login_page()
-	if answer==1:
-		return render_template('home.html')
+	if answer[0]==1:
+		name = user_page(answer[1])
+		return render_template('user.html',uname=name)
 	else:
 		return render_template('login.html')
+
+
+
+@app.route('/admin',methods=['GET','POST'])
+def admin1():
+	return render_template('admin/index.html')
+
+@app.route('/check_data_admin', methods=['GET', 'POST'])
+def check_admin():
+	answer = admin_login_page()
+	if answer==1:
+		return render_template('admin/admin.html')
+	else:
+		return render_template('admin/index.html')
+
 
 
 
