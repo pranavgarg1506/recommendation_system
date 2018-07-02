@@ -175,6 +175,6 @@ def person_recommend_page(uid):
 		#RETURN FINAL RECOMMENDATION
 		final_books = []	
 		for i in final_recommendation:
-			final_books.append(i[1])
+			final_books.append(i[0:2])
 
 		return final_books

@@ -11,6 +11,7 @@ from view_users import view_users_page
 from view_books import view_books_page
 from add_books import add_books_page
 from person_recommend import person_recommend_page
+from book import book_page
 
 
 
@@ -60,13 +61,19 @@ def check():
 	if answer[0]==1:
 		name = user_page(answer[1])
 		personal_books = person_recommend_page(answer[1])
-		print(personal_books)
-		print(type(personal_books))
-		print(personal_books[0])
-		print(type(personal_books[0]))
-		return render_template('user.html',uname=name,p_books=personal_books)
+		return render_template('user.html',uname=name,p_books=personal_books,id_u=answer[1][0][0])
 	else:
 		return render_template('login.html')
+
+
+
+
+
+# ALL ABOUT PAGE DESCRIPTION
+@app.route('/book_description<int:b_id><int:u_id>', methods=['GET', 'POST'])
+def des(b_id,u_id):
+	book_desc = book_page(b_id)
+	return render_template('book.html',results=book_desc,u_id=u_id)
 
 
 

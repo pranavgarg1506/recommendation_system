@@ -102,7 +102,7 @@ body{
 		<div class='section'>
 			{% for result in p_books %}
 			<div class='block'>
-				{{ result }}
+				<a href="/book_description{{result[0]}}{{id_u}}">{{ result[1] }}</a>
 			</div>
 			{% endfor %}
 		</div>
