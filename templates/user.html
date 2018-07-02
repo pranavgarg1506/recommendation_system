@@ -85,7 +85,7 @@ body{
 		</div>
 	</div>
 	<div class='container1'>
-		<h2> NEW BOOKS </h2> 
+		<h2> RECENTLY ARRIVED </h2> 
 		<div class='section'>
 			<div class='block'>
 			</div>
@@ -99,6 +99,14 @@ body{
 			</div>
 		</div>
 		<h2> POPULAR BOOKS </h2>
+		<div class='section'>
+			{% for result in p_books %}
+			<div class='block'>
+				{{ result }}
+			</div>
+			{% endfor %}
+		</div>
+		<h2> OUR RECOMMENDATION </h2>
 		<div class='section'>
 			<div class='block'>
 			</div>

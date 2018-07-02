@@ -10,6 +10,9 @@ from admin_login import admin_login_page
 from view_users import view_users_page
 from view_books import view_books_page
 from add_books import add_books_page
+from person_recommend import person_recommend_page
+
+
 
 mariadb_connection = mariadb.connect(user='pranav', password='funny', database='major', host='localhost')
 cursor = mariadb_connection.cursor()
@@ -29,6 +32,8 @@ def home():
 
 
 
+
+# ALL ABOUT USER REGISTER PAGE
 @app.route('/register', methods=['GET', 'POST'])
 def reg():
 	return render_template('register.html')
@@ -43,6 +48,8 @@ def add():
 
 
 
+
+# ALL ABOUT USER LOGIN AND ITS OPERATION PAGE
 @app.route('/login', methods=['GET', 'POST'])
 def log():
 	return render_template('login.html')
@@ -52,13 +59,21 @@ def check():
 	answer = login_page()
 	if answer[0]==1:
 		name = user_page(answer[1])
-		return render_template('user.html',uname=name)
+		personal_books = person_recommend_page(answer[1])
+		print(personal_books)
+		print(type(personal_books))
+		print(personal_books[0])
+		print(type(personal_books[0]))
+		return render_template('user.html',uname=name,p_books=personal_books)
 	else:
 		return render_template('login.html')
 
 
 
 
+
+
+# ABOUT ADMIN INFORMATION AND PERMISSIONS
 @app.route('/admin',methods=['GET','POST'])
 def admin1():
 	return render_template('admin/index.html')
@@ -89,6 +104,7 @@ def addb():
 def addbd():
 	add_books_page()
 	return render_template('admin/add_books.html')
+
 
 
 
