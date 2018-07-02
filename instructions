@@ -18,6 +18,5 @@ STEPS FOR DATABASE
 
 7     INSERT INTO admin_details VALUES(1, 'pranavkriya', 'lol');
 
-
-
+hi
 
