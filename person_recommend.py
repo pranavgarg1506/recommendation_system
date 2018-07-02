@@ -107,10 +107,72 @@ if mariadb_connection.is_connected():
 						if det[i][0] not in book_id:
 							recommended_bid_author.append(det[i])						
 							break
+	
+	#TWO-STAGE MAJOR RECOMMENDATION	
+	major_recommendation=recommended_bid_gerne+recommended_bid_author
+	
+	
+	##RECOMMEND STAGE 3 -- IF AUTHOR DISLIKES BOTH AUTHOR AND GERNE THAT HE LIKES	
+	
+	#FETCHING POPULAR BOOKS INSTEAD
+	recommended_bid_maduser=[]
+	bad_author=[]
+	bad_gerne=[]
+	for i in range(len(book_details)):
+		author_liked=book_details[i][1]	
+		gerne_liked=book_details[i][2]	
+		#print(author_liked)
+		if author_liked in author_dislike and gerne_liked in gerne_dislike:
+			bad_author.append(author_liked)
+			bad_gerne.append(gerne_liked)
+	
+	#MAKING STRING
+	bad_gerne_str='""'
+	for i in range(len(bad_gerne)):
+		bad_gerne_str=bad_gerne_str+',"'+bad_gerne[i]+'"'
+	
+	bad_author_str='""'
+	for i in range(len(bad_author)):
+		bad_author_str=bad_author_str+',"'+bad_author[i]+'"'
+
+	
+	#FETCHING OTHER AUTHORS
+	cursor.execute('SELECT b_id,b_name,b_author,b_type,b_avg_rating from books_details where b_type not in ('+bad_gerne_str+')')
+	det1 = cursor.fetchall()
+	
+	#FETCHING OTHER GERNES
+	cursor.execute('SELECT b_id,b_name,b_author,b_type,b_avg_rating from books_details where b_author not in ('+bad_author_str+')')
+	det2 = cursor.fetchall()
+	
+	stage3_recommendation=[]
+	for i in range(0,len(det1)):
+		stage3_recommendation.append(det1[i])
+	for i in range(0,len(det2)):
+		if det2[i] not in stage3_recommendation:
+			stage3_recommendation.append(det2[i])
+	
+	#SORTING ACC TO GLOBAL RATING
+	stage3_recommendation.sort(key = lambda x: x[4])
+	stage3_recommendation.reverse()
+	
+	
+	#MARKING FOR HIT OF 5
+	length_major=len(major_recommendation)
+	if length_major<5:
+		final_recommendation=major_recommendation+stage3_recommendation
+		final_recommendation=final_recommendation[:5]
+	elif length_major==0:
+		if len(stage3_recommendation)>=5:
+			final_recommendation=stage3_recommendation[:5]
+		else:
+			final_recommendation=stage3_recommendation
+	else:
+		final_recommendation=major_recommendation[:5]
 			
 	
+
+	
 	#PRINTING FINAL RECOMMENDATION	
-	final_recommendation=recommended_bid_gerne+recommended_bid_author
 	for i in final_recommendation:
-		print(i)
+		print(i[1])
 	
