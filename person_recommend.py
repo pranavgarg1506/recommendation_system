@@ -158,19 +158,18 @@ if mariadb_connection.is_connected():
 	
 	#MARKING FOR HIT OF 5
 	length_major=len(major_recommendation)
+	final_recommendation=[]
 	if length_major<5:
-		final_recommendation=major_recommendation+stage3_recommendation
+		for i in range(len(major_recommendation)):
+			final_recommendation.append(major_recommendation[i])
+		for i in range(len(stage3_recommendation)):
+			if stage3_recommendation[i] not in final_recommendation:
+				final_recommendation.append(stage3_recommendation[i])
 		final_recommendation=final_recommendation[:5]
-	elif length_major==0:
-		if len(stage3_recommendation)>=5:
-			final_recommendation=stage3_recommendation[:5]
-		else:
-			final_recommendation=stage3_recommendation
 	else:
 		final_recommendation=major_recommendation[:5]
-			
-	
 
+			
 	
 	#PRINTING FINAL RECOMMENDATION	
 	for i in final_recommendation:
