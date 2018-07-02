@@ -18,5 +18,14 @@ STEPS FOR DATABASE
 
 7     INSERT INTO admin_details VALUES(1, 'pranavkriya', 'lol');
 
-hi
+--NEW UPDATE TABLE STRUCTURE--
+
+8	alter table user_rating add column check_rating int not null;
+
+9	alter table books_details add column count int not null;
+
+10	update books_details set count=1;
+
+
+
 
