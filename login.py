@@ -3,8 +3,6 @@
 from flask import Flask,render_template,request,session
 import mysql.connector as mariadb
 
-
-
 def login_page():	
 	a=[]	
 	flag = 0
