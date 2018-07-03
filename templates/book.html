@@ -15,6 +15,14 @@
 		{{result[0]}}<br>
 		{{result[1]}}<br>
 	{% endfor %}
+
+	{% for b in results %}
+	<form action='/rate_update{{b[0]}}{{u_id}}' method='POST'>
+	{% endfor %}
+		RATING:- <input type='number' name='user_rating' step='0.1'><br>
+		<input type='submit' value='SUBMIT' name='enter'>		
+	</form>
+
 </body>
 
 </html>

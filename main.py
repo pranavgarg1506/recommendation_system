@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-from flask import Flask,render_template,request,session
+from flask import Flask,render_template,request,session,redirect, url_for
 import mysql.connector as mariadb
 from register import register_page
 from login import login_page
@@ -12,7 +12,8 @@ from view_books import view_books_page
 from add_books import add_books_page
 from person_recommend import person_recommend_page
 from book import book_page
-
+from rating_update import rating_update_page
+from final_update import final_update_page
 
 
 mariadb_connection = mariadb.connect(user='pranav', password='funny', database='major', host='localhost')
@@ -75,6 +76,16 @@ def des(b_id,u_id):
 	book_desc = book_page(b_id)
 	return render_template('book.html',results=book_desc,u_id=u_id)
 
+
+
+
+# ALL ABOUT BOOK RATING UPDATION
+@app.route('/rate_update<int:b_id><int:u_id>', methods=['GET', 'POST'])
+def update(b_id,u_id):
+	u_rate = rating_update_page()
+	final_update_page(b_id, u_id, u_rate)
+	book_desc = book_page(b_id)
+	return render_template('book.html',results=book_desc,u_id=u_id)
 
 
 
