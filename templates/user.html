@@ -100,24 +100,25 @@ body{
 		</div>
 		<h2> POPULAR BOOKS </h2>
 		<div class='section'>
+			<div class='block'>
+			</div>
+			<div class='block'>
+			</div>
+			<div class='block'>
+			</div>
+			<div class='block'>
+			</div>
+			<div class='block'>
+			</div>
+
+		</div>
+		<h2> OUR RECOMMENDATION </h2>
+		<div class='section'>
 			{% for result in p_books %}
 			<div class='block'>
 				<a href="/book_description{{result[0]}}{{id_u}}">{{ result[1] }}</a>
 			</div>
 			{% endfor %}
-		</div>
-		<h2> OUR RECOMMENDATION </h2>
-		<div class='section'>
-			<div class='block'>
-			</div>
-			<div class='block'>
-			</div>
-			<div class='block'>
-			</div>
-			<div class='block'>
-			</div>
-			<div class='block'>
-			</div>
 		</div>
 	</div>
 
