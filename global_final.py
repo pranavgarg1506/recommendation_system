@@ -44,7 +44,7 @@ def recommend():
 	all_rating.sort(key=float , reverse=True)
 
 	for j in all_rating:
-		query='SELECT b_name from books_details where b_avg_rating >=9.0 order by b_avg_rating DESC LIMIT 3'
+		query='SELECT b_name from books_details where b_avg_rating >=3.0 order by b_avg_rating DESC LIMIT 3'
 		#query='SELECT b_name from books_details order by b_avg_rating limit 5'
 		cur.execute(query)
 		data=cur.fetchall()
@@ -95,7 +95,7 @@ def recommend_type():
 	
 
 	for j in t_rating:
-			query='SELECT b_name from books_details where b_avg_rating >=9.0 and b_type=%s order by b_avg_rating DESC LIMIT 2'
+			query='SELECT b_name from books_details where b_avg_rating >=3.0 and b_type=%s order by b_avg_rating DESC LIMIT 2'
 			#query='SELECT b_name from books_details order by b_avg_rating limit 5'
 			cur.execute(query,(book_type[0][0],))
 			data=cur.fetchall()
