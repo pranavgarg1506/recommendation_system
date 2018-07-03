@@ -48,8 +48,13 @@ def recommend():
 		#query='SELECT b_name from books_details order by b_avg_rating limit 5'
 		cur.execute(query)
 		data=cur.fetchall()
-	print(data)
 
+
+	# final recommended book
+	for i in range(0,len(data)):
+		rec_book=data[i][0]
+		print(rec_book)
+	
 
 
 #-------------------recommendation acc to type-----------------------------
@@ -66,36 +71,39 @@ def recommend_type():
 	cur.execute(query,(book_type[0][0],))
 	output = cur.fetchall()
 
-	print(book_type[0][0])
+	#print(book_type[0][0])
 
 #comapring the type of book reader reads with the type of books we have
-	for i in range(0,len(books)):
-		if books[i]== book_type:
-			print(books[i])
+# 	for i in range(0,len(books)):
+# 		if books[i]== book_type:
+# 			print(books[i])
 
-#
 	for i in range(0,len(books)):
 		if books[i] == book_type[0][0]:
 			for j in range(0,len(output)):
 				book=output[j][0]
-				print(book)
+				#print(book)
 
 				t_rating.append(book)
 			t_rating.sort(key=float , reverse=True)
 
 
-	print(t_rating)
-	print(bookdict)
+	#print(t_rating)
+	#print(bookdict)
 
 	#--------now finding the book names from the database acc to rating
-	count=0
+	
+
 	for j in t_rating:
 			query='SELECT b_name from books_details where b_avg_rating >=9.0 and b_type=%s order by b_avg_rating DESC LIMIT 2'
 			#query='SELECT b_name from books_details order by b_avg_rating limit 5'
 			cur.execute(query,(book_type[0][0],))
 			data=cur.fetchall()
 	
-	print(data)
+	# final recommended book
+	for i in range(0,len(data)):
+		rec_book=data[i][0]
+		print(rec_book)
 
 
 #menu for performing the given operation
