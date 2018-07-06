@@ -1,0 +1,250 @@
+.container 
+{
+width :1315px;
+height:150px;
+background-color: #59BBBB;
+margin:auto;
+margin-top:-200px;
+margin-left:-8px;
+position: fixed;
+/*margin-right: 0px;*/
+/*margin-bottom:180px;*/
+}
+.container img
+{
+margin-top:auto;
+margin-left: 10px;
+border-radius: 50%;
+position: fixed;
+margin-top: 12px;
+opacity: 0.6;
+width: 150px;
+height:140px;
+}
+
+.container h1
+{
+font-size:50px;
+text-align:left;
+margin-left: 200px;
+margin-top: 75px;        
+background-blend-mode: soft-light;
+margin-bottom: 50px;
+font-family: 'Eagle Lake', cursive;
+font-style: italic;
+color:#D03028;
+text-shadow: 2px 2px #FF0000
+text-decoration-style: wavy;
+text-shadow: 1px 1px 2px #ffffff
+}
+
+.container h2
+{
+font-size:50px;
+text-align:left;
+margin-left: 470px;
+margin-top: -125px;        
+background-blend-mode: soft-light;
+margin-bottom: 50px;
+font-family: 'Playfair Display', serif;
+/*font-family: 'Philosopher', sans-serif;*/
+font-style: italic;
+color:#151739;	
+}
+.container h4
+{
+font-size:12px;
+text-align:left;
+margin-left:1170px;
+margin-top: -195px;        
+background-blend-mode: soft-light;
+margin-bottom: 50px;
+font-family: 'Eagle Lake', cursive;
+font-style: italic;
+color:#F7FA93;
+text-shadow: 2px 2px #000000
+text-decoration-style: wavy;
+}
+
+.container_button1 
+{
+width :130px;
+height:50px;
+background-color:#59BBBB;
+margin:auto;
+margin-top:-110px;
+margin-left:900px;
+position: fixed;
+/*margin-right: 0px;*/
+/*margin-bottom:180px;*/
+}
+.container_button1 button
+{
+height:40px;
+width:80px;
+font-size:18px;
+margin-left:50px;
+margin-top:14px;
+background-color:#F4FEEB;
+border-radius: 15px;
+box-shadow: 0 1px #F5F7B5;
+text-align: center;
+cursor: pointer;
+}
+
+.container_button2 
+{
+width :130px;
+height:50px;
+background-color:#59BBBB;
+margin:auto;
+margin-top:-110px;               /*79*/
+margin-left:1050px;
+position: fixed;
+/*margin-right: 0px;*/
+/*margin-bottom:180px;*/}
+
+.container_button2 button
+{
+
+height:40px;
+width:80px;
+font-size:18px;
+margin-left:5px;
+margin-top:14px;
+background-color:#F4FEEB;
+border-radius: 15px;
+box-shadow: 0 1px #F5F7B5;
+text-align: center;
+cursor: pointer;
+}
+
+.container_img
+{
+width:300px;
+height:400px;
+margin-top: 200px;
+margin-left: 70px;
+background-color:#ABDEEA;
+}
+.container_img img
+{
+
+width:230px;
+height:330px;
+margin-left:30px;
+margin-top:30px;
+/*box-shadow: 10px 10px 5px #ccc;*/
+/*align:center;*/
+}
+.container_img button
+{
+height:30px;
+width:80px;
+font-size:10px;
+margin-left:22px;
+margin-top:0px;
+background-color:#F4FEEB;
+border-radius: 15px;
+}
+.container_img button
+{
+height:30px;
+width:80px;
+font-size:10px;
+margin-left:35px;
+margin-top:0px;
+background-color:#F4FEEB;
+border-radius: 15px;
+align:right;
+}
+
+.container_bname
+{
+width:450px;
+height:50px;
+margin-top: -415px;
+margin-left: 480px;
+background-color:#EFDFFE;	
+}
+
+.container_bname h1
+{
+font-size:35px;
+text-align:left;
+margin-left: 20px;
+margin-top: 15px;        
+background-blend-mode: soft-light;
+margin-bottom: 50px;
+/*font-family: 'Marck Script', cursive;*/
+font-family: 'Eagle Lake', cursive;
+font-style: italic;
+color:#3A3B37;
+text-shadow: 2px 2px #FF0000
+text-decoration-style: wavy;
+/*background-color: grey;*/
+border-radius: 22px;
+border-bottom: 3px  ;
+background-color: #E6E6FA;
+border-bottom:  2px solid green ;
+text-shadow: 1px 1px 2px #ffffff;
+}
+
+.container_bname h2
+{
+font-size:25px;
+text-align:left;
+margin-left: 300px;
+margin-top: -95px;        
+background-blend-mode: soft-light;
+margin-bottom: 50px;
+/*font-family: 'Tangerine', cursive;*/
+font-family: 'Caveat', cursive;
+font-style: italic;
+color:#3A3B37;
+text-shadow: 2px 2px #FF0000
+text-decoration-style: wavy;
+letter-spacing: 2px;
+align:right;	
+}
+
+.container_desc
+{
+width :590px;
+height:350px;
+background-color:#EFDFFE;
+margin:auto;
+margin-top:30px;
+margin-left:420px;
+}
+
+.container_desc p
+{
+font-size:20px;
+text-align:left;
+margin-left:20px;
+margin-top: 30px;        
+background-blend-mode: soft-light;
+margin-bottom: 50px;
+font-family: 'Handlee', cursive;
+font-style: italic;
+color:#3A3B37;
+/*text-indent: 30px;*/
+/*text-shadow: 2px 2px #FF0000
+text-decoration-style: wavy;*/
+letter-spacing: 2px;
+/*text-orientation: center;*/
+/*text-indent: 2px*/
+border-left: 6px solid blue;
+background-color: #EFDFFE;
+}
+
+footer {
+width:1270px;
+margin-top:500px;
+margin-left: 0px;
+background-color: #777;
+padding: 10px;
+text-align: center;
+color: white;
+}
