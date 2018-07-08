@@ -13,6 +13,9 @@ def user_page(uid):
 		cursor = mariadb_connection.cursor()
 		cursor.execute('SELECT p_name from user_details where p_id = %s', [uid])
 		name = cursor.fetchall()
-		#ans1 = name[0][0]
-		return name[0][0]
+		# collecting the name 
+		ans1 = name[0][0]
+		# split the name using ' '
+		ans = ans1.split(' ')
+		return ans[0]
 	
