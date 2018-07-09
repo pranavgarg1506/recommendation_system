@@ -16,12 +16,17 @@
 		{{result[1]}}<br>
 	{% endfor %}
 
-	{% for b in results %}
-	<form action='/rate_update{{b[0]}}{{u_id}}' method='POST'>
-	{% endfor %}
+	
+	<form  method='POST'>
+	
 		RATING:- <input type='number' name='user_rating' step='0.1'><br>
-		<input type='submit' value='SUBMIT' name='enter'>		
+		{% for b in results %}
+		<input type='submit' value='SUBMIT' name='enter' formaction='/rate_update{{b[0]}}{{u_id}}'>
+	`	<input type="submit" value="DOWNLOAD NOW" formaction='/download_file1{{b[0]}}'>
+		<input type="submit" value="READ NOW" formaction='/download_file2{{b[0]}}'>
+		{% endfor %}
 	</form>
+
 
 </body>
 

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-
-from flask import Flask,render_template,request,session,redirect, url_for
+import os
+from flask import Flask,render_template,request,session,redirect, url_for,send_file
 import mysql.connector as mariadb
 from register import register_page
 from login import login_page
@@ -87,6 +87,24 @@ def update(b_id,u_id):
 	final_update_page(b_id, u_id, u_rate)
 	book_desc = book_page(b_id)
 	return render_template('book.html',results=book_desc,u_id=u_id)
+
+
+
+
+# ALL ABOUT DOWNLOADING BOOKS
+@app.route('/download_file1<int:b_id>', methods=['GET', 'POST'])
+def downloa1(b_id):
+	present_location = os.getcwd()
+	precise_location = present_location+"/database/pdfs/"
+	return send_file(precise_location+str(b_id)+str(".pdf"), as_attachment=True)
+
+# ALL ABOUT READING BOOKS
+@app.route('/download_file2<int:b_id>', methods=['GET', 'POST'])
+def downloa2(b_id):
+	present_location = os.getcwd()
+	precise_location = present_location+"/database/pdfs/"
+	return send_file(precise_location+str(b_id)+str(".pdf"))
+
 
 
 
